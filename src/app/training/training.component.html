@@ -1,0 +1,12 @@
+<div class="trainingMessage">
+  <div *ngIf="trainingMessage">
+<h2>Training Message</h2>   
+<div>{{trainingMessage.title}} &nbsp; &nbsp; &nbsp; &nbsp;{{trainingMessage.date}}</div>
+   <br />
+   <div>
+     {{trainingMessage.message}}    
+   </div>
+    <br />
+    <a [attr.href]='trainingMessage.URL'>{{trainingMessage.URL}}</a> 
+</div>    
+</div>

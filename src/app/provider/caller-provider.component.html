@@ -1,0 +1,48 @@
+﻿  
+<form (ngSubmit)="onSubmit(caller)" #providerForm="ngForm">
+  <h5>Validate Provider User</h5>
+  <div class="row">
+    <div class="col-xs-3">
+      <label for="taxId">Tax ID</label>
+      <input id="taxId" name="taxId" class="form-control" required
+             minlength="9" maxlength="10" type="number"
+             [(ngModel)]="caller.taxId" #taxId="ngModel"
+             placeholder="Tax Id or NPI is required">
+
+    </div>
+    <div class="col-xs-3">
+      <label for="providerOrCorporation">Provider</label>
+      <input id="providerName" name="providerName" class="form-control"
+             [(ngModel)]="caller.providerName" #provider="ngModel"
+             placeholder="Provider is optional">
+
+    </div>
+    <div class="col-xs-3">
+      <label for="groupName">Group Name</label>
+      <input id="groupName" name="groupName" class="form-control"
+             [(ngModel)]="caller.groupName" #groupName="ngModel"
+             placeholder="Group name is optional">
+    </div>
+    <div class="col-xs-3">
+      <label for="npi">NPI Number</label>
+      <input id="npi" name="npi" class="form-control" required
+             maxlength="10" type="number"
+             [(ngModel)]="caller.npi" #npi="ngModel"
+             placeholder="NPI or Tax Id is required">
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-xs-3">
+      <button type="submit" class="btn btn-primary"  [disabled]="(taxId.invalid && npi.invalid) && ( taxId.touched || npi.touched)">Search</button>
+    </div>
+
+    <div *ngIf="(taxId.invalid && npi.invalid) && ( taxId.touched || npi.touched)" class="col-sm-3 margin-right-10 alert alert-danger color-white">
+      Tax Id or NPI is required.
+    </div>
+  </div>
+  </form>
+
+  <br />
+
+  <caller-provider-search [data]="rows"></caller-provider-search>

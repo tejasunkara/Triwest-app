@@ -1,0 +1,35 @@
+﻿<div *ngIf="gridData">
+   <br />
+  
+    <ngx-datatable class="ngx-datatable bootstrap material"
+                   [rows]="gridData"
+                   [loadingIndicator]="loadingIndicator"
+                   [columnMode]="'force'"
+                   [headerHeight]="50"
+                   [footerHeight]="50"
+                   [rowHeight]="'auto'"
+                   [reorderable]="reorderable"
+                   [selected]="selected"
+                   [selectionType]="'single'"
+                   (select)='onSelect($event)'>
+
+      <ngx-datatable-column name="Select">
+        <ng-template let-value="Id" ngx-datatable-cell-template>
+          <input type="radio" />
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Tax Id" ></ngx-datatable-column>
+      <ngx-datatable-column name="ProviderName" ></ngx-datatable-column>
+      <ngx-datatable-column name="GroupName" ></ngx-datatable-column>
+      <ngx-datatable-column name="NPI" ></ngx-datatable-column>
+      <ngx-datatable-column name="AddressPrimary" ></ngx-datatable-column>
+      <ngx-datatable-column name="CityPrimary" ></ngx-datatable-column>
+      <ngx-datatable-column name="StatePrimary" ></ngx-datatable-column>
+      <ngx-datatable-column name="PostalCodePrimary" ></ngx-datatable-column>
+
+    </ngx-datatable>
+    <div class="col-xs-6 text-right">
+      <button class="btn-primary btn" *ngIf="selected.length">Continue</button>
+    </div>
+ 
+</div>

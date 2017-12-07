@@ -1,0 +1,9 @@
+.trainingMessage {
+position: fixed;bottom: 0;left: 0; 
+height:280px; width:280px; border-style: groove;
+margin: 25px; padding:5px;
+}
+a {
+  cursor: pointer;
+  cursor: hand;
+}
