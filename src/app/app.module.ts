@@ -15,6 +15,8 @@ import { VeteranDetailsModalComponent } from './veteran-details-modal/veteran-de
 import { MatchPhoneTypePipe } from './core/pipes/match-phone-type.pipe';
 import { MatchAddressTypePipe } from './core/pipes/match-address-type.pipe';
 import { RemovePhoneTypePipe } from './core/pipes/remove-phone-type.pipe';
+import { MultipleDatePickerModule } from './multiple-date-picker/multiple-date-picker.module';
+import { MomentModule } from 'angular2-moment';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { RemovePhoneTypePipe } from './core/pipes/remove-phone-type.pipe';
     NgbModule.forRoot(),
     FormsModule,
     HttpModule,
-    NgxDatatableModule
+    NgxDatatableModule,
+    MultipleDatePickerModule
   ],
   providers: [],
   entryComponents: [VeteranDetailsModalComponent],
